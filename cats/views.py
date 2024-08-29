@@ -38,6 +38,8 @@ class CatViewSet(viewsets.ModelViewSet):
     search_fields = ('name',)
     # # Определим, что значение параметра search должно быть началом искомой строки
     # search_fields = ('^name',)
+    ordering_fields = ('name', 'birth_year')  # Сортировка. Если, к примеру, добавить "-" ("-name"), то сортировка в обратном порядке.
+    ordering = ('birth_year',)  # Сортировка по умолчанию.
 
     def get_permissions(self):
         # Если в GET-запросе требуется получить информацию об объекте
