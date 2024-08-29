@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'cats.apps.CatsConfig',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -148,7 +149,7 @@ REST_FRAMEWORK = {
         'anon': '1000/day',  # Лимит для AnonRateThrottle
         # Имена (ключи) для scope придумывает разработчик,
         # в меру собственной фантазии
-        'low_request': '1/minute',
+        'low_request': '5/minute',
     },
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 5,
